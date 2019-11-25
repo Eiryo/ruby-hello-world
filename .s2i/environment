@@ -1,2 +1,5 @@
 # The default environment for this Ruby application is production
 RACK_ENV=production
+HTTP_PROXY=http://proxygate2.nic.nec.co.jp:8080/
+HTTPS_PROXY=http://proxygate2.nic.nec.co.jp:8080/
+NO_PROXY=.nec.co.jp,10.1.0.0/16,172.30.0.0/16,localhost
