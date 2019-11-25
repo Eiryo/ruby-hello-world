@@ -5,10 +5,9 @@ ENV RACK_ENV production
 ENV RAILS_ENV production
 COPY . /opt/app-root/src/
 ENV GEM_HOME ~/.gem
+RUN env
 RUN scl enable rh-ruby25 "bundle install"
-CMD ["env"]
 CMD ["scl", "enable", "rh-ruby25", "./run.sh"]
-
 USER root
 RUN chmod og+rw /opt/app-root/src/db
 USER default
