@@ -5,6 +5,9 @@ ENV RACK_ENV production
 ENV RAILS_ENV production
 COPY . /opt/app-root/src/
 ENV GEM_HOME ~/.gem
+ENV HTTP_PROXY=http://proxygate2.nic.nec.co.jp:8080/
+ENV HTTPS_PROXY=http://proxygate2.nic.nec.co.jp:8080/
+ENV NO_PROXY=10.1.0.0/16,172.30.0.0/16,localhost
 RUN env
 RUN scl enable rh-ruby25 "bundle install"
 CMD ["scl", "enable", "rh-ruby25", "./run.sh"]
